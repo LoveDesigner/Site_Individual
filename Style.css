@@ -1,0 +1,154 @@
+*, html {box-sizing:border-box}
+
+[class^="page"]{
+	max-width:100%;
+    height: auto;	
+	}
+	
+.page0{
+	background-color:#36D792;
+	
+}	
+	
+.page2{
+	background-color: #FFA073;
+}	
+
+.page3{
+	background-color:#36D792;
+}
+
+.page4{
+	background-color:#33CCCC;
+}
+	
+.page5{
+	background-color:#6AF26A;
+}	
+
+.page6{
+	background-color:#36D792;
+}
+	
+/* Slideshow container */
+.slider {
+  position: relative;
+  padding-top: 45%;
+  overflow: hidden;
+  background-color:#36D792;
+}
+
+.slider input { display: none; }
+.slider label { transition: 3s; }
+.slider img {
+  position: absolute; 
+  left: 50%;
+  top: 45%;
+  max-width: 70%;
+  max-height: 80%;
+  -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+}
+
+.slider label,
+.slider #slide1:checked ~ [for="slide1"],
+.slider #slide2:checked ~ [for="slide2"],
+.slider #slide3:checked ~ [for="slide3"],
+.slider #slide4:checked ~ [for="slide4"],
+.slider #slide5:checked ~ [for="slide5"] {
+  position: absolute; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-60%) scale(.7); z-index: 2;
+}
+
+.slider #slide1:checked ~ [for="slide3"],
+.slider #slide2:checked ~ [for="slide4"],
+.slider #slide3:checked ~ [for="slide5"],
+.slider #slide4:checked ~ [for="slide1"],
+.slider #slide5:checked ~ [for="slide2"] {
+  transform: translateX(60%) scale(.7); z-index: 2;
+}
+
+.slider #slide1:checked ~ [for="slide4"],
+.slider #slide2:checked ~ [for="slide5"],
+.slider #slide3:checked ~ [for="slide1"],
+.slider #slide4:checked ~ [for="slide2"],
+.slider #slide5:checked ~ [for="slide3"],
+.slider #slide1:checked ~ [for="slide5"],
+.slider #slide2:checked ~ [for="slide1"],
+.slider #slide3:checked ~ [for="slide2"],
+.slider #slide4:checked ~ [for="slide3"],
+.slider #slide5:checked ~ [for="slide4"] {
+  z-index: 1;
+}
+
+.slider #slide1:checked ~ [for="slide2"],
+.slider #slide2:checked ~ [for="slide3"],
+.slider #slide3:checked ~ [for="slide4"],
+.slider #slide4:checked ~ [for="slide5"],
+.slider #slide5:checked ~ [for="slide1"] { transform: translateX(0); z-index: 4; visibility: visible;}
+ 
+ /* Styles for menu */
+.menu-main {
+  list-style: none;
+  margin: 0px 0 5px;
+  padding: 25px 0 0px;
+  text-align: right;
+  background: #7FFFD4;
+  max-width:100%;
+  height:auto;
+  flex:1;
+  position:relative;
+}
+
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+  content: "|";
+  color: #FFB173;
+  display: inline-block;
+  vertical-align:top;
+}
+
+@import src(Content/Fonts/TMVinograd-FilledOblique.otf);
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+  text-decoration: none;
+  font-family: "TMVinograd-FilledOblique";
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 34px 0 30px;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .2s;
+}
+
+.menu-main a, .menu-main a:visited {color:white;}
+.menu-main a.current, .menu-main a:hover{color: #FFB173;}
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  height:2px;
+  top: auto;
+  right: 50%;
+  bottom: 0px;
+  left: 50%;
+  background: white;
+  transition: .8s;
+}
+
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}   
+@media (max-width: 550px) {
+.menu-main {padding-top: 0;}
+.menu-main li {display: block;}
+.menu-main li:after {content: none;}
+.menu-main a {
+  padding: 25px 0 20px; 
+  margin: 0 30px;
+}
+
